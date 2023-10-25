@@ -6,6 +6,10 @@ Workflow management service to allow management of data to cureated around workf
 - Swagger docs integration is not added. 
 - Request data schema is not validated as of now. But can done so in a custom middleware or using external libs like 'express-json-validator-middleware'.
 
+## Note:
+- Each and every API is not added. But indicative APIs are added to show how others can be added in simillar fashion. 
+- All cases for error handeling are not added in each and every place. But indicative comments are added to show and where they can be done.
+
 ## Installation
 Install the dependencies and devDependencies and start the server.
 ```sh

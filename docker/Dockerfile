@@ -1,9 +1,11 @@
-FROM nodejs:latest
+FROM node:16.20-alpine
 
-WORKDIR /usr/src/app
+WORKDIR /app
 USER 0
-COPY --chown=1001:0 package*.json ./
-COPY --chown=1001:0 dist/app-local.js ./
-COPY --chown=1001:0 node_modules/ ./node_modules
-EXPOSE 4400
-ENTRYPOINT [ "node", "--max-http-header-size", "16000",  "app-local.js"]
+FROM node:14.17.0-alpine
+WORKDIR /app
+ADD package*.json ./
+RUN npm install
+ADD dist/* ./
+CMD [ "node", "index.js"]
+EXPOSE 8000
