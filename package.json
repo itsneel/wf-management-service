@@ -4,9 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "rm -rf ./dist && tsc",
+    "prebuild": "rm -rf ./dist",
+    "build": "tsc",
+    "postbuild": "mv ./dist/src/* ./dist && rm -rf ./dist/src/",
     "start": "node dist/index.js",
-    "dev": "nodemon index.ts",
+    "dev": "nodemon src/index.ts",
     "format": "npm run format:prettier",
     "format:prettier": "prettier --config .prettierrc \"./**/*.{ts,js,json}\" --write"
   },

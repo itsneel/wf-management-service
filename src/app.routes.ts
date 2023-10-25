@@ -1,5 +1,5 @@
 import express from 'express';
-import { canEditWF, canEditPermissions } from 'middlewares';
+import { canEditWF, canEditPermissions } from './middlewares';
 
 const mainRouter = express.Router();
 

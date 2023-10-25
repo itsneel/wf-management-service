@@ -20,8 +20,8 @@ class PermisisonsController {
     try {
       const response = await this._permissionsService.addOrUpdatePermisisonToWF(user, perm, wfId);
       resp.status(201).json({
-        success: response
-      })
+        success: response,
+      });
     } catch (error) {
       // handle error in a better way
       next(error);
@@ -37,9 +37,9 @@ class PermisisonsController {
     const user = (req as WFRequest).user;
     try {
       const response = await this._permissionsService.revokePermisisonToWF(user, wfId);
-      resp.status(201).json({
-        success: response
-      })
+      resp.status(200).json({
+        success: response,
+      });
     } catch (error) {
       // handle error in a better way
       next(error);

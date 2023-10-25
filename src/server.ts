@@ -1,8 +1,9 @@
 import express, { Application, Response, Request } from 'express';
 import cors from 'cors';
 import * as mainRoutes from './app.routes';
-import { setRequestUserContext } from 'middlewares';
-import { MainDBProvider } from 'common';
+import { setRequestUserContext } from './middlewares';
+import { MainDBProvider } from './common';
+import { ConnectOptions } from 'mongoose';
 
 export class Server {
   app: Application;
@@ -21,7 +22,12 @@ export class Server {
     console.log('Initialising application Server');
     // initialise database conection
     // TODO: provide propper options
-    new MainDBProvider({}, {}).initialize();
+    new MainDBProvider({
+      connectionString: 'mongodb://localhost:27017/hyperbots'
+    }, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    } as ConnectOptions).initialize();
   }
 
   private _allowCors(): void {

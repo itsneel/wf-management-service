@@ -3,10 +3,6 @@ const mongoose = require('mongoose');
 const actionSchema = new mongoose.Schema({});
 
 const inputSchema = new mongoose.Schema({
-  id: {
-    type: String,
-    required: true,
-  },
   customInData: {
     type: Object,
     required: false,
@@ -14,10 +10,6 @@ const inputSchema = new mongoose.Schema({
 });
 
 const outputSchema = new mongoose.Schema({
-  id: {
-    type: String,
-    required: true,
-  },
   customOutData: {
     type: Object,
     required: false,
@@ -25,10 +17,6 @@ const outputSchema = new mongoose.Schema({
 });
 
 const stepsSchema = new mongoose.Schema({
-  id: {
-    type: String,
-    required: true,
-  },
   order: {
     type: Number,
     required: true,
@@ -45,10 +33,6 @@ const stepsSchema = new mongoose.Schema({
 });
 
 const mainSchema = new mongoose.Schema({
-  id: {
-    type: String,
-    required: true,
-  },
   name: {
     type: String,
     required: true,

@@ -35,7 +35,6 @@ export class PermissionsService {
   }
 
   public async revokePermisisonToWF(user: User, wfId: string): Promise<boolean> {
-    
     let model;
     try {
       const result = await PermissionModel.findOne({ workflow: wfId }).select('_id').lean();
@@ -47,12 +46,10 @@ export class PermissionsService {
         return true;
       } else {
         // throw a custom exception
-        throw new Error('user dosen\'t have permission');
+        throw new Error("user dosen't have permission");
       }
-
     } catch (error) {
       // log the error or propogate the error
-
     }
     return false;
   }
