@@ -1,0 +1,7 @@
+npm-debug.log
+e2e
+.vs
+.git
+.gitignore
+docker/*
+.dockerignore
